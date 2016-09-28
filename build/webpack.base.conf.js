@@ -9,7 +9,7 @@ module.exports = {
   },
   output: {
     path: config.build.assetsRoot,
-    publicPath: process.env.NODE_ENV === 'production' ? config.build.assetsPublicPath : config.dev.assetsPublicPath,
+    publicPath: config.build.assetsPublicPath,
     filename: '[name].js'
   },
   resolve: {
@@ -64,5 +64,8 @@ module.exports = {
   },
   vue: {
     loaders: utils.cssLoaders()
+  },
+  externals: {
+    jquery: 'jQuery'
   }
 }
