@@ -14,6 +14,8 @@ import Vuex from 'vuex';
 
 // import $ from 'jquery';
 
+console.log(Zepto);
+
 Vue.use(Vuex);
 
 //----------------------------初始化AJAX----------------------------
