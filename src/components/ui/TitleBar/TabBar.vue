@@ -1,13 +1,17 @@
 <template>
 
 	<common-bar>
-		<slot name="bar-left"></slot>
+		<div slot="bar-left">
+			<slot name="bar-left"></slot>
+		</div>
 		<div slot="title">
 		  	<div class="buttons-row">
 		    	<a v-for="(key, tab) in tabs" @click="dispatchEvent(tab, key)" class="tab-link button" v-bind:class="{'active': tab.active}">{{tab.label}}</a>
 		  	</div>
 		</div>
-		<slot name="bar-right"></slot>
+		<div slot="bar-right">
+			<slot name="bar-right"></slot>			
+		</div>
 	</common-bar>
 
 </template>
