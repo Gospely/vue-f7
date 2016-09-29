@@ -11,6 +11,10 @@ module.exports = function(router){
 		'/404': {
 			component: require('./404.vue'),
 			name: '404'
+		},
+		'/tabs': {
+			component: require('./components/tabs.vue'),
+			name: 'tabs'
 		}
 	});
 };

@@ -1,11 +1,8 @@
 <template>
 
   <!-- 这里是页面内容区 -->
-  <div class="page-index">
-      <search-input :model="name" :enter="keyup"></search-input>
-
+  <div>
       <!-- <btn-group :groups.sync="groups"></btn-group> -->
-
       <v-form>
         <div slot="form">
           <text-input :model.sync="name" :keyup="changed" label="姓名"></text-input>
@@ -26,10 +23,6 @@
         </div>
       </v-form>
 
-      <p>
-        <btn></btn>
-      </p>
-
       <light-search-input></light-search-input>
 
       <light-search-input 
@@ -40,7 +33,6 @@
         :model="name"
         :search-btn-clicked="changed">
       </light-search-input>
-
 
       <light-search-input 
         :row="true" 
@@ -53,27 +45,12 @@
       </light-search-input>
 
       <p>
-        <btn label="light button" :light="true"></btn>
+        <btn></btn>
       </p>
 
-      <tab-header :tabs.sync="tabs"></tab-header>
-
-      <tab-panel :tabs.sync="tabs"></tab-panel>
-
-      <tab type="row" :tabs-header.sync="tabsHeader">
-        <div slot="body">
-          <tab-item :id="tab3" :active="true">
-            <div slot="body">
-              <span>fuck u</span>
-            </div>
-          </tab-item>
-          <tab-item :id="tab4">
-            <div slot="body">
-              <span>shit u</span>
-            </div>
-          </tab-item>
-        </div>
-      </tab>
+      <p>
+        <btn label="light button" :light="true"></btn>
+      </p>
 
       <p>
         <btn label="disabled" :disabled="true"></btn>
@@ -118,7 +95,6 @@ import VForm from './ui/Form/VForm.vue';
 import SearchInput from './ui/Search/SearchInput.vue';
 import LightSearchInput from './ui/Search/LightSearchInput.vue';
 
-import TabHeader from './ui/Tabs/TabHeader.vue';
 import Tab from './ui/Tabs/Tab.vue';
 import TabItem from './ui/Tabs/TabItem.vue';
 
@@ -178,7 +154,6 @@ export default {
     VForm,
     SearchInput,
     LightSearchInput,
-    TabHeader,
     Tab,
     TabItem
   },

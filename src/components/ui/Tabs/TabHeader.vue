@@ -1,11 +1,7 @@
 <template>
 
-  	<div v-if="!withPanel" class="buttons-{{type}}">
+  	<div class="buttons-{{type}}">
     	<a v-for="(key, tab) in tabs" @click="dispatchEvent(tab, key)" class="tab-link button" v-bind:class="{'active': tab.active}">{{tab.label}}</a>
-  	</div>
-
-  	<div v-else class="buttons-{{type}}">
-    	<a v-for="(key, tab) in tabs" href="tab.tab" class="tab-link button" v-bind:class="{'active': tab.active}">{{tab.label}}</a>
   	</div>
 
 </template>
@@ -39,6 +35,20 @@
 				default () {
 					return false;
 				}
+			},
+
+			fixed: {
+				type: Boolean,
+				default () {
+					return false;
+				}
+			},
+
+			offset: {
+				type: String,
+				default () {
+					return '';
+				}
 			}
 
 		},
@@ -53,12 +63,26 @@
 			}
 		},
 
+		ready () {
+
+			console.log($(window).scroll);
+
+
+
+		},
+
 		methods: {
 
 			dispatchEvent: function(tab, key) {
 
 				if(key == this.currentActiveTab) {
 					return false;
+				}
+
+				if(this.withPanel) {
+					$('#' + this.tabs[this.currentActiveTab].tab).removeClass('active');
+
+					$('#' + this.tabs[key].tab).addClass('active');
 				}
 
 				this.$dispatch('tabsItemClicked', {

@@ -41,12 +41,10 @@
             </div>
           </tab-bar>
 
+          <search-input :model="name" :enter="keyup"></search-input>
+
           <div class="content">
-
-            <p><a class="button button-fill" @click="open">打开左侧栏</a></p>
-
             <router-view transition="outLeftInRight"></router-view>
-
           </div>
 
           <bar 
@@ -101,7 +99,7 @@
 
   import Panel from './components/ui/Panel/Panel.vue';
 
-  console.log(ButtonBar);
+  import SearchInput from './components/ui/Search/SearchInput.vue';
 
   Vue.transition('slide', {
     enterClass: 'slideInLeft',
@@ -110,10 +108,6 @@
 
   export default {
     methods: {
-
-      open: function() {
-        Panel.methods.open('test-panel');
-      }
 
     },
 
@@ -136,7 +130,8 @@
       FooterBar,
       HeaderSecondaryBar,
       FooterSecondaryBar,
-      Panel
+      Panel,
+      SearchInput
     },
 
     data() {
@@ -171,11 +166,16 @@
 
     events: {
       'tabsItemClicked': function(item) {
-        console.log(item);
+        console.log('barr', item);
+        if(item.key === 1) {
+          this.$router.go('/tabs');
+        }else {
+          this.$router.go('/index');
+        }
       },
 
       'BarItemsClicked': function(item) {
-        console.log(item);
+        console.log('bar', item);
       }  
     }
   }

@@ -7,7 +7,7 @@
 		  	<slot name="body">
 		  		<p>这是一个侧栏</p>
 			    <p>你可以在这里放用户设置页面</p>
-			    <p><a href="#" class="close-panel">关闭</a></p>
+			    <p><a class="close-panel">关闭</a></p>
 		  	</slot>
 		  </div>
 		</div>
