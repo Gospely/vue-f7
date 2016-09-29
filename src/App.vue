@@ -45,27 +45,28 @@
               <router-view transition="outLeftInRight"></router-view>
           </div>
 
-          <nav class="bar bar-tab">
-              <a class="tab-item external active" v-link="{path: '/404'}">
-                  <span class="icon icon-home"></span>
-                  <span class="tab-label">首页</span>
-              </a>
-              <a class="tab-item external" href="#">
-                  <span class="icon icon-me"></span>
-                  <span class="tab-label">我</span>
-              </a>
-              <a class="tab-item external" href="#">
-                  <span class="icon icon-star"></span>
-                  <span class="tab-label">收藏</span>
-              </a>
-              <a class="tab-item external" href="#">
-                  <span class="icon icon-settings"></span>
-                  <span class="tab-label">设置</span>
-              </a>
-          </nav>
+          <!-- <bar :tab-items.sync="tabItems"></bar> -->
 
-          <bar
-            :tab-items.sync="tabItems"></bar>
+          <header-secondary-bar>
+            <div slot="body">
+              <button class="button button-block">Block level button</button>
+            </div>
+          </header-secondary-bar>
+
+          <footer-secondary-bar>
+            <div slot="body">
+              <button class="button button-block">Block level button</button>
+            </div>
+          </footer-secondary-bar>
+
+          <footer-bar>
+            <div slot="bar-left">
+              <a class="icon icon-edit pull-left"></a>
+            </div>
+            <div slot="bar-right">
+              <a class="icon icon-settings pull-right"></a>
+            </div>
+          </footer-bar>
 
       </div>
   </div>
@@ -82,6 +83,9 @@
   import TabBar from './components/ui/TitleBar/TabBar.vue';
 
   import Bar from './components/ui/Bar/Bar.vue';
+  import FooterBar from './components/ui/Bar/FooterBar.vue';
+  import HeaderSecondaryBar from './components/ui/Bar/HeaderSecondaryBar.vue';
+  import FooterSecondaryBar from './components/ui/Bar/FooterSecondaryBar.vue';
 
   console.log(ButtonBar);
 
@@ -110,7 +114,10 @@
       IconBar,
       IconLinkBar,
       TabBar,
-      Bar
+      Bar,
+      FooterBar,
+      HeaderSecondaryBar,
+      FooterSecondaryBar
     },
 
     data() {
