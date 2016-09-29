@@ -45,7 +45,8 @@
               <router-view transition="outLeftInRight"></router-view>
           </div>
 
-          <!-- <bar :tab-items.sync="tabItems"></bar> -->
+          <bar 
+            :tab-items.sync="tabItems"></bar>
 
           <header-secondary-bar>
             <div slot="body">
@@ -59,14 +60,14 @@
             </div>
           </footer-secondary-bar>
 
-          <footer-bar>
+<!--           <footer-bar>
             <div slot="bar-left">
               <a class="icon icon-edit pull-left"></a>
             </div>
             <div slot="bar-right">
               <a class="icon icon-settings pull-right"></a>
             </div>
-          </footer-bar>
+          </footer-bar> -->
 
       </div>
   </div>
