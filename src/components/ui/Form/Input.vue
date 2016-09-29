@@ -1,9 +1,7 @@
 <template>
 
-	<div class="item-input">
-      	<input type="{{type}}" placeholder="{{placeholder}}">
-    </div>
-
+	<input type="{{type}}" placeholder="{{placeholder}}">
+	
 </template>
 
 <style>

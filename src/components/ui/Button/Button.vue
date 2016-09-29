@@ -1,5 +1,7 @@
 <template>
-	<a :clicked="clicked" :key="key" @click="dispatchEvent" class="button" v-bind:class="{'disabled': disabled, 'button-round': rounded, 'button-fill': fill, 'button-big': big, 'button-light': light, 'button-dark': dark, 'button-success': success, 'button-danger': danger, 'button-warning': warning, 'active': active}">{{label}}</a>
+	<a :clicked="clicked" :key="key" @click="dispatchEvent" class="button" v-bind:class="{'disabled': disabled, 'button-round': rounded, 'button-fill': fill, 'button-big': big, 'button-light': light, 'button-dark': dark, 'button-success': success, 'button-danger': danger, 'button-warning': warning, 'active': active}">
+		<slot name="body">{{label}}</slot>
+	</a>
 </template>
 
 <style>

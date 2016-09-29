@@ -42,7 +42,11 @@
           </tab-bar>
 
           <div class="content">
-              <router-view transition="outLeftInRight"></router-view>
+
+            <p><a class="button button-fill" @click="open">打开左侧栏</a></p>
+
+            <router-view transition="outLeftInRight"></router-view>
+
           </div>
 
           <bar 
@@ -70,6 +74,13 @@
           </footer-bar> -->
 
       </div>
+
+      <panel :left="false" id="test-panel">
+        <!-- <div slot="body"> -->
+          
+        <!-- </div> -->
+      </panel>
+
   </div>
 
 </template>
@@ -88,6 +99,8 @@
   import HeaderSecondaryBar from './components/ui/Bar/HeaderSecondaryBar.vue';
   import FooterSecondaryBar from './components/ui/Bar/FooterSecondaryBar.vue';
 
+  import Panel from './components/ui/Panel/Panel.vue';
+
   console.log(ButtonBar);
 
   Vue.transition('slide', {
@@ -97,6 +110,10 @@
 
   export default {
     methods: {
+
+      open: function() {
+        Panel.methods.open('test-panel');
+      }
 
     },
 
@@ -118,7 +135,8 @@
       Bar,
       FooterBar,
       HeaderSecondaryBar,
-      FooterSecondaryBar
+      FooterSecondaryBar,
+      Panel
     },
 
     data() {

@@ -2,9 +2,11 @@
 
   <!-- 这里是页面内容区 -->
   <div class="page-index">
-      <btn-group :groups.sync="groups"></btn-group>
+      <search-input :model="name" :enter="keyup"></search-input>
 
-      <v-form :forms.sync="forms">
+      <!-- <btn-group :groups.sync="groups"></btn-group> -->
+
+      <v-form>
         <div slot="form">
           <text-input :model.sync="name" :keyup="changed" label="姓名"></text-input>
           <switch :on="true" :changed="changed"></switch>
@@ -27,6 +29,28 @@
       <p>
         <btn></btn>
       </p>
+
+      <light-search-input></light-search-input>
+
+      <light-search-input 
+        :row="true" 
+        :button-visible="true"
+        input-col="80"
+        btn-col="20"
+        :model="name"
+        :search-btn-clicked="changed">
+      </light-search-input>
+
+
+      <light-search-input 
+        :row="true" 
+        :button-visible="true"
+        input-col="85"
+        btn-col="15"
+        :model="name"
+        :search-btn-clicked="changed"
+        :use-btn-icon="true">
+      </light-search-input>
 
       <p>
         <btn label="light button" :light="true"></btn>
@@ -72,6 +96,9 @@ import TextArea from './ui/Form/TextArea.vue';
 
 import VForm from './ui/Form/VForm.vue';
 
+import SearchInput from './ui/Search/SearchInput.vue';
+import LightSearchInput from './ui/Search/LightSearchInput.vue';
+
 export default {
   data () {
 
@@ -104,12 +131,18 @@ export default {
     TextInput,
     Switch,
     TextArea,
-    VForm
+    VForm,
+    SearchInput,
+    LightSearchInput
   },
 
   methods: {
     changed: function(on) {
       console.log('changed', on);
+    },
+
+    keyup: function(on) {
+      console.log('Search keyup', on);
     }
   },
 
