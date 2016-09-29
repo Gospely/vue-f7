@@ -5,9 +5,7 @@
 			<slot name="bar-left"></slot>
 		</div>
 		<div slot="title">
-		  	<div class="buttons-row">
-		    	<a v-for="(key, tab) in tabs" @click="dispatchEvent(tab, key)" class="tab-link button" v-bind:class="{'active': tab.active}">{{tab.label}}</a>
-		  	</div>
+			<tab-header type="row" :tabs.sync="tabs"></tab-header>
 		</div>
 		<div slot="bar-right">
 			<slot name="bar-right"></slot>			
@@ -23,6 +21,7 @@
 <script>
 
 	import CommonBar from './CommonBar.vue'
+	import TabHeader from '../Tabs/TabHeader.vue'
 
 	export default {
 
@@ -38,34 +37,9 @@
 		},
 
 		components: {
-			CommonBar
-		},
-
-		data: function() {
-			return {
-				currentActiveTab: 0
-			}
-		},
-
-		methods: {
-
-			dispatchEvent: function(tab, key) {
-
-				if(key == this.currentActiveTab) {
-					return false;
-				}
-
-				this.$dispatch('tabsItemClicked', {
-					current: tab,
-					key: key
-				});
-				this.tabs[this.currentActiveTab].active = false;
-				this.tabs[key].active = true;
-				this.currentActiveTab = key;
-			}
-
+			CommonBar,
+			TabHeader
 		}
-
 	}
 
 </script>

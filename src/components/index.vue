@@ -56,6 +56,25 @@
         <btn label="light button" :light="true"></btn>
       </p>
 
+      <tab-header :tabs.sync="tabs"></tab-header>
+
+      <tab-panel :tabs.sync="tabs"></tab-panel>
+
+      <tab type="row" :tabs-header.sync="tabsHeader">
+        <div slot="body">
+          <tab-item :id="tab3" :active="true">
+            <div slot="body">
+              <span>fuck u</span>
+            </div>
+          </tab-item>
+          <tab-item :id="tab4">
+            <div slot="body">
+              <span>shit u</span>
+            </div>
+          </tab-item>
+        </div>
+      </tab>
+
       <p>
         <btn label="disabled" :disabled="true"></btn>
       </p>
@@ -99,6 +118,10 @@ import VForm from './ui/Form/VForm.vue';
 import SearchInput from './ui/Search/SearchInput.vue';
 import LightSearchInput from './ui/Search/LightSearchInput.vue';
 
+import TabHeader from './ui/Tabs/TabHeader.vue';
+import Tab from './ui/Tabs/Tab.vue';
+import TabItem from './ui/Tabs/TabItem.vue';
+
 export default {
   data () {
 
@@ -116,7 +139,28 @@ export default {
 
       forms: [{
         type: 'text'
+      }],
+
+      tabs: [{
+        active: true,
+        label: 'Tab fuck',
+        id: 'tab1'
+      }, {
+        active: false,
+        label: 'Tab shit',
+        id: 'tab2'
+      }],
+
+      tabsHeader: [{
+        active: true,
+        label: 'shit',
+        tab: 'tab3',
+      }, {
+        active: false,
+        label: 'fuck',
+        tab: 'tab4'
       }]
+
     }
 
   },
@@ -133,7 +177,10 @@ export default {
     TextArea,
     VForm,
     SearchInput,
-    LightSearchInput
+    LightSearchInput,
+    TabHeader,
+    Tab,
+    TabItem
   },
 
   methods: {
