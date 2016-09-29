@@ -2,8 +2,8 @@
 
 	<nav class="bar bar-tab">
 	  <a class="tab-item external" v-bind:class="{'active': tab.active}" v-for="(key, tab) in tabItems" @click="dispatchEvent(tab, key)">
-	    <span class="icon {{tab.icon}}"></span>
-	    <span class="tab-label">{{tab.label}}</span>
+	    <span class="icon {{tab.icon}}" v-show="tab.icon"></span>
+	    <span v-bind:class="{'tab-label': tab.icon}">{{tab.label}}</span>
 	    <span class="badge" v-show="tab.badge > 0">{{tab.badge}}</span>
 	  </a>
 	</nav>
@@ -38,12 +38,13 @@
 		methods: {
 
 			dispatchEvent: function(tab, key) {
-
 				this.tabItems[this.currentActiveTab].active = false;
 				this.tabItems[key].active = true;
 				this.currentActiveTab = key;
-
-				this.$dispatch('BarItemsClicked', tab);
+				this.$dispatch('BarItemsClicked', {
+					current: tab,
+					key: key
+				});
 			}
 
 		}

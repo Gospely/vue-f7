@@ -127,8 +127,7 @@
         tabItems: [{
           active: true,
           label: '文案',
-          badge: false,
-          icon: 'icon-home'
+          badge: false
         }, {
           active: false,
           label: '文案',
