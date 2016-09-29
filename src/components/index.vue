@@ -37,7 +37,7 @@
       </p>
 
       <p>
-        <btn label="danger" :danger="true"></btn>
+        <btn :clicked="clicked" label="danger" :danger="true"></btn>
       </p>
 
       <p>
@@ -61,8 +61,6 @@ export default {
   data () {
     return {
 
-
-
     }
   },
 
@@ -74,6 +72,10 @@ export default {
   },
 
   methods: {
+
+    clicked: function() {
+      console.log('sss');
+    }
 
   }
 }

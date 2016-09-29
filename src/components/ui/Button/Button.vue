@@ -1,5 +1,5 @@
 <template>
-	<a href="#" class="button" v-bind:class="{'disabled': disabled, 'button-round': rounded, 'button-fill': fill, 'button-big': big, 'button-light': light, 'button-dark': dark, 'button-success': success, 'button-danger': danger, 'button-warning': warning}">{{label}}</a>
+	<a @click="clicked" class="button" v-bind:class="{'disabled': disabled, 'button-round': rounded, 'button-fill': fill, 'button-big': big, 'button-light': light, 'button-dark': dark, 'button-success': success, 'button-danger': danger, 'button-warning': warning}">{{label}}</a>
 </template>
 
 <style>
@@ -79,8 +79,14 @@
 				default () {
 					return false;
 				}
-			}
+			},
 
+			clicked: {
+				type: Function,
+				default () {
+					return function (){};
+				}
+			}
 		}
 
 	}
