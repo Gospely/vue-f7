@@ -48,18 +48,18 @@
           <bar 
             :tab-items.sync="tabItems"></bar>
 
-          <header-secondary-bar>
+<!--           <header-secondary-bar>
             <div slot="body">
               <button class="button button-block">Block level button</button>
             </div>
           </header-secondary-bar>
-
-          <footer-secondary-bar>
+ -->
+<!--           <footer-secondary-bar>
             <div slot="body">
               <button class="button button-block">Block level button</button>
             </div>
           </footer-secondary-bar>
-
+ -->
 <!--           <footer-bar>
             <div slot="bar-left">
               <a class="icon icon-edit pull-left"></a>

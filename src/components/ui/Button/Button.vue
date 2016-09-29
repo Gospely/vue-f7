@@ -1,5 +1,5 @@
 <template>
-	<a @click="clicked" class="button" v-bind:class="{'disabled': disabled, 'button-round': rounded, 'button-fill': fill, 'button-big': big, 'button-light': light, 'button-dark': dark, 'button-success': success, 'button-danger': danger, 'button-warning': warning}">{{label}}</a>
+	<a :clicked="clicked" :key="key" @click="dispatchEvent" class="button" v-bind:class="{'disabled': disabled, 'button-round': rounded, 'button-fill': fill, 'button-big': big, 'button-light': light, 'button-dark': dark, 'button-success': success, 'button-danger': danger, 'button-warning': warning, 'active': active}">{{label}}</a>
 </template>
 
 <style>
@@ -81,11 +81,35 @@
 				}
 			},
 
+			active: {
+				type: Boolean,
+				default () {
+					return false;
+				}
+			},
+
 			clicked: {
 				type: Function,
 				default () {
-					return function (){};
+					return function() {};
 				}
+			},
+
+			key: {
+				type: Number,
+				default () {
+					return 0;
+				}
+			}
+		},
+
+		methods: {
+			dispatchEvent: function() {
+				var self = this;
+				this.$dispatch('buttonClicked', {
+					current: self.$el,
+					key: self.key
+				});
 			}
 		}
 

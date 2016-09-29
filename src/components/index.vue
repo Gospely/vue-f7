@@ -2,19 +2,7 @@
 
   <!-- 这里是页面内容区 -->
   <div class="page-index">
-      <div class="card">
-          <div style="background-image:url(//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg)" valign="bottom" class="card-header color-white no-border">旅途的山</div>
-          <div class="card-content">
-              <div class="card-content-inner">
-                  <p class="color-gray">发表于 2015/01/15</p>
-                  <p>此处是内容...</p>
-              </div>
-          </div>
-          <div class="card-footer">
-              <a href="#" class="link">赞</a>
-              <a href="#" class="link">更多</a>
-          </div>
-      </div>
+      <btn-group :groups.sync="groups"></btn-group>
 
       <p>
         <btn></btn>
@@ -37,7 +25,7 @@
       </p>
 
       <p>
-        <btn :clicked="clicked" label="danger" :danger="true"></btn>
+        <btn label="danger" :danger="true"></btn>
       </p>
 
       <p>
@@ -56,11 +44,18 @@
 <script>
 
 import Btn from './ui/Button/Button.vue';
+import BtnGroup from './ui/Button/ButtonGroup.vue';
 
 export default {
   data () {
     return {
-
+      groups: [{
+        label: 'shit 1',
+        active: true
+      }, {
+        label: 'shit 2',
+        active: false
+      }]
     }
   },
 
@@ -68,15 +63,22 @@ export default {
   },
 
   components: {
-    Btn
+    Btn,
+    BtnGroup
   },
 
   methods: {
 
-    clicked: function() {
-      console.log('sss');
-    }
+  },
 
+  events: {
+    'buttonGroupClicked': function(item) {
+      console.log(item);
+    },
+
+    'buttonClicked': function(el) {
+      console.log('sss', el);
+    }
   }
 }
 
