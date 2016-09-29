@@ -106,6 +106,11 @@
 		methods: {
 			dispatchEvent: function() {
 				var self = this;
+
+				if(self.disabled) {
+					return false;
+				}
+
 				this.$dispatch('buttonClicked', {
 					current: self.$el,
 					key: self.key

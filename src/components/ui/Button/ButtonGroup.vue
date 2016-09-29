@@ -51,6 +51,10 @@
 
 		events: {
 		    'buttonClicked': function(el) {
+		    	if(el.key == this.currentActivebtn) {
+		    		return false;
+		    	}
+
 		    	this.groups[el.key].active = true;
 		    	this.groups[this.currentActivebtn].active = false;
 		    	this.currentActivebtn = el.key;

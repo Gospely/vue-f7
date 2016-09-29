@@ -50,6 +50,11 @@
 		methods: {
 
 			dispatchEvent: function(tab, key) {
+
+				if(key == this.currentActiveTab) {
+					return false;
+				}
+
 				this.$dispatch('tabsItemClicked', {
 					current: tab,
 					key: key
