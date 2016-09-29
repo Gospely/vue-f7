@@ -64,6 +64,9 @@
               </a>
           </nav>
 
+          <bar
+            :tab-items.sync="tabItems"></bar>
+
       </div>
   </div>
 
@@ -77,6 +80,8 @@
   import IconBar from './components/ui/TitleBar/IconBar.vue';
   import IconLinkBar from './components/ui/TitleBar/IconLinkBar.vue';
   import TabBar from './components/ui/TitleBar/TabBar.vue';
+
+  import Bar from './components/ui/Bar/Bar.vue';
 
   console.log(ButtonBar);
 
@@ -104,25 +109,49 @@
       ButtonBar,
       IconBar,
       IconLinkBar,
-      TabBar
+      TabBar,
+      Bar
     },
 
     data() {
       return {
+
         tabs: [{
           active: true,
           label: 'Tab fuck'
         }, {
           active: false,
           label: 'Tab shit'
+        }],
+
+        tabItems: [{
+          active: true,
+          label: '文案',
+          badge: false,
+          icon: 'icon-home'
+        }, {
+          active: false,
+          label: '文案',
+          badge: 10,
+          icon: 'icon-me'
+        }, {
+          active: false,
+          label: '文案',
+          badge: false,
+          icon: 'icon-star'
         }]
+
       }
     },
 
     events: {
       'tabsItemClicked': function(item) {
         console.log(item);
-      }
+      },
+
+      'BarItemsClicked': function(item) {
+        console.log(item);
+      }  
     }
   }
 
