@@ -170,6 +170,25 @@
 
       'BarItemsClicked': function(item) {
         console.log('bar', item);
+
+        var self = this;
+
+        var toPage = [
+          function() {
+            self.$router.go('/index');
+          },
+
+          function() {
+            self.$router.go('/list');
+          },
+
+          function() {
+            
+          }
+        ];
+
+        toPage[item.key]();
+
       },
 
       'leftButtonClicked': function(el) {

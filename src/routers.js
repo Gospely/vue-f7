@@ -15,6 +15,10 @@ module.exports = function(router){
 		'/tabs': {
 			component: require('./components/tabs.vue'),
 			name: 'tabs'
+		},
+		'/list': {
+			component: require('./components/list.vue'),
+			name: 'list'
 		}
 	});
 };
