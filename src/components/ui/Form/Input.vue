@@ -26,6 +26,13 @@
 				default () {
 					return '';
 				}
+			},
+
+			id: {
+				type: String,
+				default () {
+					return '';
+				}
 			}
 
 		}

@@ -8,6 +8,7 @@
           <text-input :model.sync="name" :keyup="changed" label="姓名"></text-input>
           <switch :on="true" :changed="changed"></switch>
           <text-area :model="fuck" :changed="changed"></text-area>
+          <calendar id="birthday" :on-change="calendarOnChange" label="生日"></calendar>
         </div>
         <div slot="footer">
           <div class="content-block">
@@ -89,6 +90,7 @@ import Inputer from './ui/Form/Input.vue';
 import TextInput from './ui/Form/TextInput.vue';
 import Switch from './ui/Form/Switch.vue';
 import TextArea from './ui/Form/TextArea.vue';
+import Calendar from './ui/Calendar/Calendar.vue';
 
 import VForm from './ui/Form/VForm.vue';
 
@@ -155,7 +157,8 @@ export default {
     SearchInput,
     LightSearchInput,
     Tab,
-    TabItem
+    TabItem,
+    Calendar
   },
 
   methods: {
@@ -165,6 +168,10 @@ export default {
 
     keyup: function(on) {
       console.log('Search keyup', on);
+    },
+
+    calendarOnChange: function(p, v, d) {
+      console.log(p, v, d);
     }
   },
 

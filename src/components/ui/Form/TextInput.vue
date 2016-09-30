@@ -6,7 +6,7 @@
           	<div class="item-inner">
             <div v-show="labelVisible" class="item-title label">{{label}}</div>
             <div class="item-input">
-              	<input debounce="debounce" v-model="model" @keyup.tab="tab" @keyup.delete="deleted" @keyup.esc="esc" @keyup.space="space" @keyup.up="up" @keyup.enter="enter" @keyup.down="down" @keyup.left="left" @keyup.right="right" @keyup="keyup" type="{{type}}" placeholder="{{placeholder}}">
+              	<input id="{{id}}" class="{{cls}}" debounce="debounce" v-model="model" @keyup.tab="tab" @keyup.delete="deleted" @keyup.esc="esc" @keyup.space="space" @keyup.up="up" @keyup.enter="enter" @keyup.down="down" @keyup.left="left" @keyup.right="right" @keyup="keyup" type="{{type}}" placeholder="{{placeholder}}">
             </div>
           </div>
         </div>
@@ -45,6 +45,20 @@
 			},
 
 			icon: {
+				type: String,
+				default () {
+					return '';
+				}
+			},
+
+			id: {
+				type: String,
+				default () {
+					return '';
+				}
+			},
+
+			cls: {
 				type: String,
 				default () {
 					return '';

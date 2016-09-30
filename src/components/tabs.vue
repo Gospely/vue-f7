@@ -38,14 +38,16 @@
 	        	</grid>
 
 	        	<grid :gutter="false">
-	        		<grid-row col="30">
+	        		<grid-row col="33">
 	        			
 	        			<p>
 	        				<btn click="openPopup" label="显示popup"></btn>
 	        			</p>
 
 	        		</grid-row>
-	        		<grid-row col="70">80%</grid-row>
+	        		<grid-row col="33">
+	        			
+	        		</grid-row>
 	        	</grid>
 
 	        </tab-item>
@@ -71,6 +73,8 @@
   	import GridRow from './ui/Grid/GridRow.vue';
 
   	import btn from './ui/Button/Button.vue';
+
+  	import Calendar from './ui/Calendar/Calendar.vue';
 
 	export default {
 	  data () {
@@ -295,7 +299,8 @@
 	    TabItem,
 	    Grid,
 	    GridRow,
-	    btn
+	    btn,
+	    Calendar
 	  }
 	}
 
