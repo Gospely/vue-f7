@@ -1,14 +1,6 @@
 <template>
 	<text-input 
 		:label="label"
-		date-format="dateFormat"
-		min-date="minDate"
-		max-date="maxDate"
-		on-change="onChange"
-		on-open="onOpen"
-		on-close="onClose"
-		value="value"
-		readonly="readonly"
 		:id="id" 
 		:label-visible="labelVisible"></text-input>
 </template>
@@ -29,9 +21,9 @@
 
 			$("#" + self.id).calendar({
 		      value: [self.value],
-		      onChange: self.onChange,
-		      onClose: self.onClose,
-		      onOpen: self.onOpen,
+		      onChange: self.changed,
+		      onClose: self.closed,
+		      onOpen: self.opened,
 		      minDate: self.minDate,
 		      maxDate: self.maxDate,
 		      dateFormat: self.dateFormat,
@@ -103,21 +95,21 @@
 				}
 			},
 
-			onChange: {
+			changed: {
 				type: Function,
 				default () {
 					return function(p, values, displayValues) {};
 				}
 			},
 
-			onOpen: {
+			opened: {
 				type: Function,
 				default () {
 					return function(p) {};
 				}
 			},
 
-			onClose: {
+			closed: {
 				type: Function,
 				default () {
 					return function(p) {};

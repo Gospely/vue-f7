@@ -8,13 +8,14 @@
           <text-input :model.sync="name" :keyup="changed" label="姓名"></text-input>
           <switch :on="true" :changed="changed"></switch>
           <text-area :model="fuck" :changed="changed"></text-area>
-          <calendar id="birthday" :on-change="calendarOnChange" label="生日"></calendar>
+          <calendar id="birthday" :changed="calendarOnChange" label="生日"></calendar>
+          <picker label="手机" id="phone" model="fuck" title="蛤蛤蛤蛤" :cols.sync="pickerCols"></picker>
         </div>
         <div slot="footer">
           <div class="content-block">
             <div class="row">
               <div class="col-50">
-                <btn label="取消" :big="true" :danger="true" :fill="true" :rounded="false"></btn>              
+                <btn label="取消" :big="true" :danger="true" :fill="true" :rounded="false"></btn>        
               </div>
               <div class="col-50">
                 <btn label="确认" :big="true" :success="true" :fill="true" :rounded="false"></btn>
@@ -91,6 +92,7 @@ import TextInput from './ui/Form/TextInput.vue';
 import Switch from './ui/Form/Switch.vue';
 import TextArea from './ui/Form/TextArea.vue';
 import Calendar from './ui/Calendar/Calendar.vue';
+import Picker from './ui/Calendar/Picker.vue';
 
 import VForm from './ui/Form/VForm.vue';
 
@@ -137,7 +139,9 @@ export default {
         active: false,
         label: 'fuck',
         tab: 'tab4'
-      }]
+      }],
+
+      pickerCols: ['fuck', 'shit', 'bitch']
 
     }
 
@@ -158,7 +162,8 @@ export default {
     LightSearchInput,
     Tab,
     TabItem,
-    Calendar
+    Calendar,
+    Picker
   },
 
   methods: {
