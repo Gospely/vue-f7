@@ -83,12 +83,14 @@
 					$('#' + this.tabs[this.currentActiveTab].tab).removeClass('active');
 
 					$('#' + this.tabs[key].tab).addClass('active');
+				}else {
+					this.$dispatch('tabsItemClicked', {
+						current: tab,
+						key: key
+					});
+
 				}
 
-				this.$dispatch('tabsItemClicked', {
-					current: tab,
-					key: key
-				});
 				this.tabs[this.currentActiveTab].active = false;
 				this.tabs[key].active = true;
 				this.currentActiveTab = key;
