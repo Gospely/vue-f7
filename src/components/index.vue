@@ -141,7 +141,15 @@ export default {
         tab: 'tab4'
       }],
 
-      pickerCols: ['fuck', 'shit', 'bitch']
+      pickerCols: [{
+          textAlign: 'center',
+          values: ['fuck', 'shit', 'bitch']
+        },
+        {
+          textAlign: 'center',
+          values: ['fuck', 'shit', 'bitch']
+        },
+      ]
 
     }
 

@@ -1,6 +1,5 @@
 <template>
 	<text-input 
-		text-align="textAlign"
 		title="title"
 		cols="cols"
 		:id="id"
@@ -28,12 +27,7 @@
 			  <button class="button button-link pull-right close-picker">确定</button>\
 			  <h1 class="title">' + self.title + '</h1>\
 			  </header>',
-			  cols: [
-			    {
-			      textAlign: self.textAlign,
-			      values: self.cols
-			    }
-			  ]
+			  cols: self.cols
 			});
 		},
 
