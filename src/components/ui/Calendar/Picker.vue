@@ -71,6 +71,13 @@
 				}
 			},
 
+			title: {
+				type: String,
+				default () {
+					return '请选择';
+				}
+			},
+
 			cols: {
 				type: Array,
 				default () {

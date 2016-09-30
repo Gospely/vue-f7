@@ -26,13 +26,14 @@
 			  <button class="button button-link pull-right close-picker">确定</button>\
 			  <h1 class="title">' + self.title + '</h1>\
 			  </header>',
-			  cssClass: self.cssClass,
-			  opened: self.opened,
-			  closed: self.closed,
-			  formatValue: self.formatValue,
-			  rotateEffect: self.rotateEffect,
-			  value: self.model
+			  // cssClass: self.cssClass,
+			  // opened: self.opened,
+			  // closed: self.closed,
+			  // formatValue: self.formatValue,
+			  // rotateEffect: self.rotateEffect,
+			  value: ['1985', '12', '04', '9', '34']
 			});
+
 		},
 
 		components: {
@@ -70,6 +71,13 @@
 				}
 			},
 
+			title: {
+				type: String,
+				default () {
+					return '请选择';
+				}
+			},
+
 			cols: {
 				type: Array,
 				default () {
@@ -91,12 +99,12 @@
 				}
 			},
 
-			model: {
-				type: Array,
-				default () {
-					return [];
-				}
-			},
+			// model: {
+			// 	type: Array,
+			// 	default () {
+			// 		return [];
+			// 	}
+			// },
 
 			formatValue: {
 				type: String,

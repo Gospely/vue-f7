@@ -9,8 +9,8 @@
           <switch :on="true" :changed="changed"></switch>
           <text-area :model="fuck" :changed="changed"></text-area>
           <calendar id="birthday" :changed="calendarOnChange" label="生日"></calendar>
-          <picker label="手机" id="phone" model="fuck fuck" title="蛤蛤蛤蛤" :cols.sync="pickerCols"></picker>
-          <datetime-picker title="蛤蛤蛤蛤" label="时间" id="timepicker" :model="['1985', '12', '04', '9', '34']"></datetime-picker>
+          <picker label="手机" id="phone" model="fuck fuck" :cols.sync="pickerCols"></picker>
+          <datetime-picker label="时间" id="timepicker"></datetime-picker>
         </div>
         <div slot="footer">
           <div class="content-block">
@@ -152,7 +152,9 @@ export default {
           textAlign: 'center',
           values: ['fuck', 'shit', 'bitch']
         },
-      ]
+      ],
+
+      timeA: ['1985', '12', '04', '9', '34']
 
     }
 
