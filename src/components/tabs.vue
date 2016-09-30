@@ -14,6 +14,9 @@
 	            <p><btn click="openModal" label="带有三个按钮的Modal"></btn></p>
 	            <p><btn click="openModalWithCustomHTML" label="自定义html的Modal"></btn></p>
 	            <p><btn click="openModalWithBerticalButtons" label="垂直按钮的Modal"></btn></p>
+	            <p><btn click="openPreloader" label="打开预加载"></btn></p>
+	            <p><btn click="openIndicator" label="打开迷你指示器"></btn></p>
+	            <p><btn click="openToast" label="显示toast"></btn></p>
 	        </tab-item>
 	        <tab-item id="tab6">
 	        	<grid>
@@ -34,8 +37,20 @@
 	        		<grid-row col="80">80%</grid-row>
 	        	</grid>
 
+	        	<grid :gutter="false">
+	        		<grid-row col="30">
+	        			
+	        			<p>
+	        				<btn click="openPopup" label="显示popup"></btn>
+	        			</p>
+
+	        		</grid-row>
+	        		<grid-row col="70">80%</grid-row>
+	        	</grid>
+
 	        </tab-item>
       	</tab>
+
 	</div>
 </template>
 
@@ -45,8 +60,11 @@
 
 <script>
 
+	import Vue from 'vue';
+
 	import Tab from './ui/Tabs/Tab.vue';
 	import TabItem from './ui/Tabs/TabItem.vue';
+
   	import Panel from './ui/Panel/Panel.vue';
 
   	import Grid from './ui/Grid/Grid.vue';
@@ -172,14 +190,42 @@
 	    'openModalWithCustomHTML': function() {
 
 		    $.modal({
-		      title:  '<div class="buttons-row">'+
-		                '<a href="#tab1" class="button active tab-link">Tab 1</a>'+
-		                '<a href="#tab2" class="button tab-link">Tab 2</a>'+
-		              '</div>',
-		      text: '<div class="tabs">'+
-		              '<div class="tab active" id="tab1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam convallis nunc non dolor euismod feugiat. Sed at sapien nisl. Ut et tincidunt metus. Suspendisse nec risus vel sapien placerat tincidunt. Nunc pulvinar urna tortor.</div>'+
-		              '<div class="tab" id="tab2">Vivamus feugiat diam velit. Maecenas aliquet egestas lacus, eget pretium massa mattis non. Donec volutpat euismod nisl in posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae</div>'+
-		            '</div>',
+		      title:  `		<tab :fixed="true" :tabs-header.sync="tabsHeader" offset="44">
+	        <tab-item id="tab5" :active="true">
+	            <p><a class="button button-fill" @click="open">打开左侧栏</a></p>
+	            <p><btn click="openAlert" label="弹出文本"></btn></p>
+	            <p><btn click="openAlertTitle" label="弹出文本和标题"></btn></p>
+	            <p><btn click="openAlertTitleAndCB" label="弹出文本标题和回调"></btn></p>
+	            <p><btn click="openConfirm" label="确认框"></btn></p>
+	            <p><btn click="openConfirmAndCB" label="确认框取消按钮回调"></btn></p>
+	            <p><btn click="openConfirmTitleAndCB" label="确认框带有标题的回调"></btn></p>
+	            <p><btn click="openPrompt" label="提示框"></btn></p>
+	            <p><btn click="openPrompt" label="提示框"></btn></p>
+	            <p><btn click="openModal" label="带有三个按钮的Modal"></btn></p>
+	            <p><btn click="openModalWithCustomHTML" label="自定义html的Modal"></btn></p>
+	            <p><btn click="openModalWithBerticalButtons" label="垂直按钮的Modal"></btn></p>
+	        </tab-item>`,
+		      text: `<tab-item id="tab6">
+				        	<grid>
+				        		<grid-row col="33">33%</grid-row>
+				        		<grid-row col="33">33%</grid-row>
+				        		<grid-row col="33">33%</grid-row>
+				        	</grid>
+
+				        	<grid>
+				        		<grid-row col="50">50%</grid-row>
+				        		<grid-row col="50">50%</grid-row>
+				        	</grid>
+
+				        	<h3>No gutter</h3>
+
+				        	<grid :gutter="false">
+				        		<grid-row col="20">20%</grid-row>
+				        		<grid-row col="80">80%</grid-row>
+				        	</grid>
+
+				        </tab-item>
+			      	</tab>`,
 		      buttons: [
 		        {
 		          text: '好，我知道了',
@@ -218,7 +264,28 @@
 		      	]
 		    });
 
+	    },
 
+	    'openPreloader': function() {
+	    	$.showPreloader('正在加载...');
+	    	setTimeout(function() {
+	    		$.hidePreloader();
+	    	}, 2000);
+	    },
+
+	    'openIndicator': function() {
+		    $.showIndicator();
+		    setTimeout(function () {
+		        $.hideIndicator();
+		    }, 2000);
+	    },
+
+	    'openToast': function() {
+	    	$.toast('操作成功');
+	    },
+
+	    'openPopup': function() {
+	    	$.popup('.about');
 	    }
 
 	  },

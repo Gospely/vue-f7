@@ -3,21 +3,6 @@
   <div class="page-group">
       <div class="page">
 
-         <!--  <header class="bar bar-nav">
-              <a class="button button-link button-nav pull-left" href="javascript:history.go(-1)">
-                  <span class="icon icon-left"></span>
-                  返回
-              </a>
-              <h1 class="title">我的生活</h1>
-          </header> -->
-
-<!--           <button-bar 
-            title="shit"
-            left-btn-title="fuck"
-            right-btn-title="bitch"
-            :right-visible="false">
-          </button-bar>
- -->
 <!--           <icon-bar 
             title="fuck"
             left-icon="icon-left"
@@ -76,6 +61,15 @@
       <panel :left="false" id="test-panel">
       </panel>
 
+      <popup cls="about">
+        <button-bar 
+          title="shit"
+          left-btn-title="关闭"
+          right-btn-title="popup"
+          :right-visible="false">
+        </button-bar>
+      </popup>
+
   </div>
 
 </template>
@@ -97,6 +91,8 @@
   import Panel from './components/ui/Panel/Panel.vue';
 
   import SearchInput from './components/ui/Search/SearchInput.vue';
+
+  import Popup from './components/ui/Popup/Popup.vue';
 
   Vue.transition('slide', {
     enterClass: 'slideInLeft',
@@ -128,7 +124,8 @@
       HeaderSecondaryBar,
       FooterSecondaryBar,
       Panel,
-      SearchInput
+      SearchInput,
+      Popup
     },
 
     data() {
@@ -173,7 +170,11 @@
 
       'BarItemsClicked': function(item) {
         console.log('bar', item);
-      }  
+      },
+
+      'leftButtonClicked': function(el) {
+        $.closePopup();
+      }
     }
   }
 

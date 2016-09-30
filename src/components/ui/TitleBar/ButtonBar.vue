@@ -4,12 +4,12 @@
 	<common-bar :title="title">
 		<div slot="bar-left">
 			<slot name="bar-left">
-				<button @click="$dispatch('leftButtonClicked')" v-show="leftVisible" class="button pull-left">{{leftBtnTitle}}</button>
+				<button @click="$dispatch('leftButtonClicked', this)" v-show="leftVisible" class="button pull-left">{{leftBtnTitle}}</button>
 			</slot>
 		</div>
 		<div slot="bar-right">
 			<slot name="bar-right">
-				<button @click="$dispatch('rightButtonClicked')" v-show="rightVisible" class="button pull-right">{{rightBtnTitle}}</button>
+				<button @click="$dispatch('rightButtonClicked', this)" v-show="rightVisible" class="button pull-right">{{rightBtnTitle}}</button>
 			</slot>
 		</div>		
 	</common-bar>

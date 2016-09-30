@@ -12,9 +12,11 @@ import routerConfig from './routers.js';
 import Vuex from 'vuex';
 // import stores from './vuex/stores.js';
 
-// import $ from 'jquery';
-
-console.log(Zepto);
+$.closePopup = function () {
+    var closeMe = $('body').append('<a id="close-fucking-popup" class="close-popup">Close me</a>');
+    $('#close-fucking-popup').click();
+    $('#close-fucking-popup').remove();
+};
 
 Vue.use(Vuex);
 
