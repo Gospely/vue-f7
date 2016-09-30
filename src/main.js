@@ -18,6 +18,10 @@ $.closePopup = function () {
     $('#close-fucking-popup').remove();
 };
 
+$.toggleDark = function() {
+	$('body').toggleClass('theme-dark');
+};
+
 Vue.use(Vuex);
 
 //----------------------------初始化AJAX----------------------------

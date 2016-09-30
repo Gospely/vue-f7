@@ -26,6 +26,11 @@
         </div>
       </v-form>
 
+      <icon icon="app"></icon>
+      <icon icon="card"></icon>
+      <icon icon="cart"></icon>
+      <icon icon="star"></icon>
+
       <light-search-input></light-search-input>
 
       <light-search-input 
@@ -105,6 +110,8 @@ import LightSearchInput from './ui/Search/LightSearchInput.vue';
 import Tab from './ui/Tabs/Tab.vue';
 import TabItem from './ui/Tabs/TabItem.vue';
 
+import Icon from './ui/Icon/Icon.vue';
+
 export default {
   data () {
 
@@ -177,7 +184,8 @@ export default {
     TabItem,
     Calendar,
     Picker,
-    DatetimePicker
+    DatetimePicker,
+    Icon
   },
 
   methods: {
