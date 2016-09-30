@@ -1,6 +1,5 @@
 <template>
-	<text-input 
-		:label="label"
+	<div 
 		date-format="dateFormat"
 		min-date="minDate"
 		max-date="maxDate"
@@ -9,8 +8,8 @@
 		on-close="onClose"
 		value="value"
 		readonly="readonly"
-		:id="id" 
-		:label-visible="labelVisible"></text-input>
+		id="id">
+	</div>
 </template>
 
 <style>
