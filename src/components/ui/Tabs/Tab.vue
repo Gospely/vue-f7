@@ -9,9 +9,7 @@
 			:offset.sync="offset">
 		</tab-header>
 		<div class="tabs">
-			<div slot="body">
-				<slot name="body"></slot>
-			</div>
+			<slot></slot>
 		</div>
 	</div>
 

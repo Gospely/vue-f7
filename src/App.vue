@@ -74,9 +74,6 @@
       </div>
 
       <panel :left="false" id="test-panel">
-        <!-- <div slot="body"> -->
-          
-        <!-- </div> -->
       </panel>
 
   </div>

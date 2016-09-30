@@ -97,6 +97,13 @@
 				}
 			},
 
+			click: {
+				type: String,
+				default () {
+					return '';
+				}
+			},
+
 			key: {
 				type: Number,
 				default () {
@@ -110,6 +117,14 @@
 				var self = this;
 
 				if(self.disabled) {
+					return false;
+				}
+
+				if(this.click !== '') {
+					this.$dispatch(this.click, {
+						current: self.$el,
+						key: self.key
+					});						
 					return false;
 				}
 

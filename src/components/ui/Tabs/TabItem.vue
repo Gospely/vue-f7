@@ -3,7 +3,7 @@
     <div class="tabs">
       	<div id="{{id}}" class="tab" v-bind:class="{'active': active}">
         	<div class="content-block">
-        		<slot name="body"></slot>
+        		<slot></slot>
         	</div>
       	</div>
     </div>

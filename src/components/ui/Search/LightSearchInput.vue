@@ -1,16 +1,14 @@
 <template>
 
-	<div>
-		<div class="searchbar" v-bind:class="{'row': row}">
-		    <div class="search-input col-{{inputCol}}">
-		      	<label v-show="iconVisible" class="icon icon-search" for="search"></label>
-		      	<input type="search" @keyup.enter="enter" v-on:keyup="keyup" v-model="model" id='search' placeholder='{{placeholder}}'/>
-		    </div>
-		    <a @click="searchBtnClicked" v-show="buttonVisible" class="button button-fill button-primary col-{{btnCol}}">
-		    	<span v-show="!useBtnIcon">{{btnLabel}}</span>
-				<span v-show="useBtnIcon" class="icon {{btnIcon}}"></span>
-		    </a>
-		  </div>
+	<div class="searchbar" v-bind:class="{'row': row}">
+	    <div class="search-input col-{{inputCol}}">
+	      	<label v-show="iconVisible" class="icon icon-search" for="search"></label>
+	      	<input type="search" @keyup.enter="enter" v-on:keyup="keyup" v-model="model" id='search' placeholder='{{placeholder}}'/>
+	    </div>
+	    <a @click="searchBtnClicked" v-show="buttonVisible" class="button button-fill button-primary col-{{btnCol}}">
+	    	<span v-show="!useBtnIcon">{{btnLabel}}</span>
+			<span v-show="useBtnIcon" class="icon {{btnIcon}}"></span>
+	    </a>
 	</div>
 
 </template>

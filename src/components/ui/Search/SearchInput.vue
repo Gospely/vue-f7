@@ -1,14 +1,12 @@
 <template>
 
 	<header-secondary-bar>
-		<div slot="body">
-		  <div class="searchbar">
+		<div class="searchbar">
 		    <a class="searchbar-cancel">退出</a>
 		    <div class="search-input">
 		      	<label class="icon icon-search" for="search"></label>
 		      	<input type="search" @keyup.enter="enter" v-on:keyup="keyup" v-model="model" placeholder='{{placeholder}}'/>
 		    </div>
-		  </div>
 		</div>
 	</header-secondary-bar>
 
