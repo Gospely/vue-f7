@@ -9,7 +9,8 @@
           <switch :on="true" :changed="changed"></switch>
           <text-area :model="fuck" :changed="changed"></text-area>
           <calendar id="birthday" :changed="calendarOnChange" label="生日"></calendar>
-          <picker label="手机" id="phone" model="fuck" title="蛤蛤蛤蛤" :cols.sync="pickerCols"></picker>
+          <picker label="手机" id="phone" model="fuck fuck" title="蛤蛤蛤蛤" :cols.sync="pickerCols"></picker>
+          <datetime-picker title="蛤蛤蛤蛤" label="时间" id="timepicker" :model="['1985', '12', '04', '9', '34']"></datetime-picker>
         </div>
         <div slot="footer">
           <div class="content-block">
@@ -91,8 +92,10 @@ import Inputer from './ui/Form/Input.vue';
 import TextInput from './ui/Form/TextInput.vue';
 import Switch from './ui/Form/Switch.vue';
 import TextArea from './ui/Form/TextArea.vue';
+
 import Calendar from './ui/Calendar/Calendar.vue';
 import Picker from './ui/Calendar/Picker.vue';
+import DatetimePicker from './ui/calendar/DatetimePicker';
 
 import VForm from './ui/Form/VForm.vue';
 
@@ -171,7 +174,8 @@ export default {
     Tab,
     TabItem,
     Calendar,
-    Picker
+    Picker,
+    DatetimePicker
   },
 
   methods: {

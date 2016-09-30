@@ -1,9 +1,9 @@
 <template>
 	<text-input 
 		cols="cols"
-		:id="id"
-		:label="label"
-		:label-visible="labelVisible">
+		:id.sync="id"
+		:label.sync="label"
+		:label-visible.sync="labelVisible">
 	</text-input>
 </template>
 
@@ -21,12 +21,11 @@
 
 			var self = this;
 
-			$("#" + self.id).picker({
+			$("#" + self.id).datetimePicker({
 			  toolbarTemplate: '<header class="bar bar-nav">\
 			  <button class="button button-link pull-right close-picker">确定</button>\
 			  <h1 class="title">' + self.title + '</h1>\
 			  </header>',
-			  cols: self.cols,
 			  cssClass: self.cssClass,
 			  opened: self.opened,
 			  closed: self.closed,
@@ -93,9 +92,9 @@
 			},
 
 			model: {
-				type: String,
+				type: Array,
 				default () {
-					return '';
+					return [];
 				}
 			},
 
