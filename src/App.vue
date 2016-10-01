@@ -26,14 +26,15 @@
             </div>
           </tab-bar>
 
+          <bar 
+            :tab-items.sync="tabItems"></bar>
+
           <search-input :model="name" :enter="keyup"></search-input>
 
           <div class="content">
             <router-view transition="outLeftInRight"></router-view>
           </div>
 
-          <bar 
-            :tab-items.sync="tabItems"></bar>
 
 <!--           <header-secondary-bar>
             <div slot="body">

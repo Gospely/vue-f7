@@ -1,7 +1,7 @@
 <template>
 
   <!-- 这里是页面内容区 -->
-  <div>
+  <div class="content">
       <!-- <btn-group :groups.sync="groups"></btn-group> -->
       <v-form>
         <div slot="form">

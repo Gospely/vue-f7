@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="content">
 		<tab :fixed="true" :tabs-header.sync="tabsHeader" offset="44">
 	        <tab-item id="tab5" :active="true">
 	            <p><a class="button button-fill" @click="open">打开左侧栏</a></p>

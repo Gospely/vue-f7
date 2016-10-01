@@ -1,15 +1,14 @@
 <template>
 
 	<div>
-		<list title="标题测试" :items="items"></list>
-		<list :contact-list="true" :list-group.sync="listGroup"></list>
-
-		<media-list :list-items.sync="listItems" content-title="曲目">
-		</media-list>
-
-		<radio-list name="fuck" content-title="单选" :radio-items.sync="radioItems"></radio-list>
-
-		<check-list content-title="多选" :check-items.sync="radioItems"></check-list>
+		<page :pull-refresh="true" :scroll-refresh="true" id="pr">
+			<list title="标题测试" :items="items"></list>
+			<list :contact-list="true" :list-group.sync="listGroup"></list>
+			<media-list :list-items.sync="listItems" content-title="曲目">
+			</media-list>
+			<radio-list name="fuck" content-title="单选" :radio-items.sync="radioItems"></radio-list>
+			<check-list content-title="多选" :check-items.sync="radioItems"></check-list>
+		</page>
 	</div>
 
 </template>
@@ -25,6 +24,9 @@
 	import ListItem from './ui/List/ListItem.vue';
 	import RadioList from './ui/List/RadioList.vue';
 	import CheckList from './ui/List/CheckList.vue';
+	import PullRefresh from './ui/Loader/PullRefresh.vue'
+
+	import Page from './ui/layout/Page.vue';
 
 	export default {
 
@@ -33,7 +35,13 @@
 			MediaList,
 			RadioList,
 			CheckList,
-			ListItem
+			ListItem,
+			PullRefresh,
+			Page
+		},
+
+		ready () {
+
 		},
 
 		data () {
@@ -106,6 +114,18 @@
 		events: {
 			'listItemClicked': function(item) {
 				console.log(item);
+			},
+
+			'pullRefresh': function() {
+			    // 模拟2s的加载过程
+			    setTimeout(function() {
+			        // 加载完毕需要重置
+			        $.pullToRefreshDone('.pull-to-refresh-content');
+			    }, 2000);
+			},
+
+			'scrollRefresh': function() {
+				console.log('scroll');
 			}
 		}
 
