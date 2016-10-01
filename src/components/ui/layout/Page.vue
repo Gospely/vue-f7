@@ -1,6 +1,6 @@
 <template>
 
-	<div class="content" id="{{id}}" v-bind:class="{'pull-to-refresh-content': pullRefresh, 'infinite-scroll': scrollRefresh}" data-ptr-distance="{{ptrDistance}}" data-distance="{{scrollDistance}}">
+	<div class="content" id="{{id}}" v-bind:class="{'pull-to-refresh-content': pullRefresh, 'infinite-scroll': scrollRefresh, 'infinite-scroll-top': scrollPosition == 'top', 'infinite-scroll-bottom': scrollPosition == 'bottom'}" data-ptr-distance="{{ptrDistance}}" data-distance="{{scrollDistance}}">
 		<pull-refresh v-show="pullRefresh"></pull-refresh>
 		<slot></slot>
 		<scroll-preloader v-show="scrollRefresh"></scroll-preloader>
@@ -53,6 +53,13 @@
 				default () {
 					return '50';
 				}
+			},
+
+			scrollPosition: {
+				type: String,
+				default () {
+					return 'bottom';
+				}
 			}
 		},
 
@@ -68,10 +75,8 @@
 			}
 
 			if(this.scrollRefresh) {
-		      	// 注册'infinite'事件处理函数
-	      		console.log(this.id);
-		      	$(document).on('infinite', '.infinite-scroll-top',function() {
-		      		console.log('infinite');
+		      	$.init();
+		      	$(document).on('infinite', '#' + this.id,function(e) {
 					self.$dispatch('scrollRefresh');
 				});
 			}
