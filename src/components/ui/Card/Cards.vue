@@ -1,19 +1,21 @@
 <template>
 
 	<div>
-		<div v-show="contentTitle" class="content-block-title">{{contentTitle}}</div>
+		<list-title v-show="contentTitle">{{contentTitle}}</list-title>
 	    <div class="list-block cards-list">
 	    	<ul>
-	    		<card>
-					<card-header>卡头</card-header>
-					<card-content>卡内容</card-content>
-					<card-footer>卡尾</card-footer>
-	    		</card>
-	    		<card>
-					<card-header>卡头</card-header>
-					<card-content>卡内容</card-content>
-					<card-footer>卡尾</card-footer>
-	    		</card>
+	    		<slot>
+		    		<card>
+						<card-header>卡头</card-header>
+						<card-content>卡内容</card-content>
+						<card-footer>卡尾</card-footer>
+		    		</card>
+		    		<card>
+						<card-header>卡头</card-header>
+						<card-content>卡内容</card-content>
+						<card-footer>卡尾</card-footer>
+		    		</card>
+	    		</slot>
 	    	</ul>
 	    </div>		
 	</div>
@@ -30,6 +32,7 @@
 	import CardHeader from './CardHeader.vue';
 	import CardContent from './CardContent.vue';
 	import CardFooter from './CardFooter.vue';
+	import ListTitle from '../List/ListTitle';
 
 	export default {
 
@@ -37,7 +40,8 @@
 			CardHeader,
 			CardFooter,
 			CardContent,
-			Card
+			Card,
+			ListTitle
 		},
 
 		props: {

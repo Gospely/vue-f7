@@ -1,7 +1,7 @@
 <template>
 
 	<div>
-		<div v-show="titleVisible" class="content-block-title">{{title}}</div>
+		<list-title v-show="titleVisible">{{title}}</list-title>
 	  	<div class="list-block" v-bind:class="{'contacts-block': contactList}">
 	  		<slot>
 			    <ul v-if="!contactList">
@@ -44,13 +44,13 @@
 <script>
 
 	import ListItem from './ListItem.vue';
-
-	console.log(ListItem);
+	import ListTitle from './ListTitle.vue';
 
 	export default {
 
 		components: {
-			ListItem
+			ListItem,
+			ListTitle
 		},
 
 		props: {

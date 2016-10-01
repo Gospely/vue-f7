@@ -1,6 +1,6 @@
 <template>
 
-    <div class="card-content">
+    <div class="card-content {{cssClass}}">
 	    <div class="card-content-inner">
 	    	<slot></slot>
 	    </div>
@@ -13,5 +13,16 @@
 </style>
 
 <script>
+	
+	export default {
+		props: {
+			cssClass: {
+				type: String,
+				default () {
+					return '';
+				}
+			}
+		}
+	}
 
 </script>

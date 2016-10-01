@@ -1,22 +1,22 @@
 <template>
-
-	<div class="card-header {{cssClass}}">
-		<slot></slot>
-	</div>
+	
+	<a class="link">{{label}}</a>	
 
 </template>
 
 <script>
-	
+
 	export default {
+
 		props: {
-			cssClass: {
+			label: {
 				type: String,
 				default () {
-					return '';
+					return '链接'
 				}
 			}
 		}
+
 	}
 
 </script>
