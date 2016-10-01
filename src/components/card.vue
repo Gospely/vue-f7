@@ -1,7 +1,9 @@
 <template>
 
 	<div>
-		<card></card>
+		<cards>
+			
+		</cards>
 	</div>
 
 </template>
@@ -12,12 +14,12 @@
 
 <script>
 
-	import Card from './ui/Card/Card.vue';
+	import Cards from './ui/Card/Cards.vue';
 
 	export default {
 
 		components: {
-			Card
+			Cards
 		},
 
 		data () {
