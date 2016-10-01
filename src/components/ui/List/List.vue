@@ -3,31 +3,35 @@
 	<div>
 		<div v-show="titleVisible" class="content-block-title">{{title}}</div>
 	  	<div class="list-block" v-bind:class="{'contacts-block': contactList}">
-		    <ul v-if="!contactList">
-		      	<list-item v-for="(key, item) in items" 
-		      		:link="item.link"
-		      		:title="item.title"
-		      		:after="item.after"
-		      		:key="key" 
-		      		:item="item">
-		      	</list-item>
-		    </ul>
-		    <div v-else>
-			    <div class="list-group" v-for="(key, group) in listGroup">
-			    	<ul>
-			    		<li @click="dispatchEvent(item, key)" class="list-group-title">{{group.title}}</li>
-				        <li v-for="(k, item) in group.items">
-					      	<list-item 
-					      		:link="item.link"
-					      		:title="item.title"
-					      		:after="item.after"
-					      		:key="k" 
-					      		:item="item">
-					      	</list-item>
-				        </li>
-			    	</ul>
-			    </div>		    	
-		    </div>
+	  		<slot>
+			    <ul v-if="!contactList">
+			      	<list-item v-for="(key, item) in items" 
+			      		:link="item.link"
+			      		:title="item.title"
+			      		:after="item.after"
+			      		:icon="item.icon"
+			      		:key="key" 
+			      		:item="item">
+			      	</list-item>
+			    </ul>
+			    <div v-else>
+				    <div class="list-group" v-for="(key, group) in listGroup">
+				    	<ul>
+				    		<li class="list-group-title">{{group.title}}</li>
+					        <li v-for="(k, item) in group.items">
+						      	<list-item 
+						      		:link="item.link"
+						      		:title="item.title"
+						      		:icon="item.icon"
+						      		:after="item.after"
+						      		:key="k" 
+						      		:item="item">
+						      	</list-item>
+					        </li>
+				    	</ul>
+				    </div>		    	
+			    </div>
+	  		</slot>
 	  	</div>
 	</div>
 
@@ -89,13 +93,7 @@
 		},
 
 		methods: {
-			dispatchEvent: function(item, key) {
-				console.log('dispatchEvent');
-				this.$dispatch('listItemClicked', {
-					current: item,
-					key: key
-				});
-			}			
+				
 		}
 		
 	}

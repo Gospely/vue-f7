@@ -5,19 +5,24 @@
 
 		<div class="list-block media-list">
 			<ul>
+				<li>
 				<slot>
-					<list-item 
-						v-for="(key, item) in listItems"
+					<list-item
+						v-for="(key, radio) in checkItems"
 						:media="true"
-						:sub-title.sync="item.subTitle"
-						:title.sync="item.title"
-						:after.sync="item.after"
-						:text.sync="item.text"
-						:link.sync="item.link"
+						:optional="true"
+						:sub-title.sync="radio.subTitle"
+						:title.sync="radio.title"
+						:after.sync="radio.after"
+						:text.sync="radio.text"
+						:link.sync="radio.link"
+						option-type="checkbox"
+						:name.sync="name"
+						icon="icon-form-checkbox"
 						>
-						<img slot="media" src="http://gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i3/TB10LfcHFXXXXXKXpXXXXXXXXXX_!!0-item_pic.jpg_250x250q60.jpg" style='width: 4rem;'>
 					</list-item>
 				</slot>
+				</li>
 			</ul>
 		</div>
 
@@ -32,7 +37,7 @@
 <script>
 
 	import BaseList from './BaseList.vue';
-	import ListItem from './ListItem.vue';
+	import ListItem from './ListItem.vue';	
 
 	export default {
 
@@ -43,7 +48,7 @@
 		},
 
 		props: {
-			listItems: {
+			checkItems: {
 				type: Array,
 				default () {
 					return [];

@@ -1,9 +1,15 @@
 <template>
 
 	<div>
-		<list title="标题测试" :items="items"></list>		
-
+		<list title="标题测试" :items="items"></list>
 		<list :contact-list="true" :list-group.sync="listGroup"></list>
+
+		<media-list :list-items.sync="listItems" content-title="曲目">
+		</media-list>
+
+		<radio-list name="fuck" content-title="单选" :radio-items.sync="radioItems"></radio-list>
+
+		<check-list content-title="多选" :check-items.sync="radioItems"></check-list>
 	</div>
 
 </template>
@@ -15,12 +21,19 @@
 <script>
 
 	import List from './ui/List/List.vue';
-	import ContactList from './ui/List/ContactList.vue';
+	import MediaList from './ui/List/MediaList.vue';
+	import ListItem from './ui/List/ListItem.vue';
+	import RadioList from './ui/List/RadioList.vue';
+	import CheckList from './ui/List/CheckList.vue';
 
 	export default {
 
 		components: {
-			List
+			List,
+			MediaList,
+			RadioList,
+			CheckList,
+			ListItem
 		},
 
 		data () {
@@ -32,12 +45,12 @@
 					after: '杜蕾斯',
 					link: false
 				}, {
-					icon: false,
+					icon: '',
 					title: '型号',
 					after: '极致超薄型',
 					link: true
 				}, {
-					icon: true,
+					icon: '',
 					title: '库存',
 					after: '123件',
 					link: true
@@ -57,6 +70,34 @@
 						link: true,
 						icon: 'icon-f7'
 					}]
+				}],
+
+				listItems: [{
+					subTitle: '标题',
+					title: 'fuck',
+					after: 'shit',
+					text: '文本内容...',
+					link: true
+				}, {
+					subTitle: '标题fuck',
+					title: 'bitch',
+					after: 'shit',
+					text: '文本内容...',
+					link: false
+				}],
+
+				radioItems: [{
+					subTitle: '标题',
+					title: 'fuck',
+					after: 'shit',
+					text: '文本内容...',
+					link: true
+				}, {
+					subTitle: '标题fuck',
+					title: 'bitch',
+					after: 'shit',
+					text: '文本内容...',
+					link: false
 				}]
 
 			}
