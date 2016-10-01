@@ -183,7 +183,7 @@
           },
 
           function() {
-            
+            self.$router.go('/card');
           }
         ];
 

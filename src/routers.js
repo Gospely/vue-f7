@@ -19,6 +19,10 @@ module.exports = function(router){
 		'/list': {
 			component: require('./components/list.vue'),
 			name: 'list'
+		},
+		'/card': {
+			component: require('./components/card.vue'),
+			name: 'card'
 		}
 	});
 };
