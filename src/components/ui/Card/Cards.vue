@@ -1,19 +1,22 @@
 <template>
 
-    <div class="list-block cards-list">
-    	<ul>
-    		<card>
-				<card-header>卡头</card-header>
-				<card-content>卡内容</card-content>
-				<card-footer>卡尾</card-footer>
-    		</card>
-    		<card>
-				<card-header>卡头</card-header>
-				<card-content>卡内容</card-content>
-				<card-footer>卡尾</card-footer>
-    		</card>
-    	</ul>
-    </div>
+	<div>
+		<div v-show="contentTitle" class="content-block-title">{{contentTitle}}</div>
+	    <div class="list-block cards-list">
+	    	<ul>
+	    		<card>
+					<card-header>卡头</card-header>
+					<card-content>卡内容</card-content>
+					<card-footer>卡尾</card-footer>
+	    		</card>
+	    		<card>
+					<card-header>卡头</card-header>
+					<card-content>卡内容</card-content>
+					<card-footer>卡尾</card-footer>
+	    		</card>
+	    	</ul>
+	    </div>		
+	</div>
 
 </template>
 
@@ -35,6 +38,15 @@
 			CardFooter,
 			CardContent,
 			Card
+		},
+
+		props: {
+			contentTitle: {
+				type: String,
+				default () {
+					return '标题';
+				}
+			}
 		}
 
 	}
