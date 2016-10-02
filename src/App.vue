@@ -3,59 +3,10 @@
   <div class="page-group">
       <div class="page">
 
-<!--           <icon-bar 
-            title="fuck"
-            left-icon="icon-left"
-            right-icon="icon-refresh">
-          </icon-bar>
- -->
-<!--           <icon-link-bar
-            title="fuck"
-            left-icon="icon-left"
-            right-icon="icon-right"
-            left-btn-title="pre"
-            right-btn-title="next">
-          </icon-link-bar> -->
-
-          <tab-bar
-            :tabs.sync="tabs">
-            <div slot="bar-left">
-              <button class="button pull-left">
-                Left
-              </button>
-            </div>
-          </tab-bar>
-
-          <bar 
-            :tab-items.sync="tabItems"></bar>
-
-          <search-input :model="name" :enter="keyup"></search-input>
-
-          <div class="content">
-            <router-view transition="outLeftInRight"></router-view>
-          </div>
-
-
-<!--           <header-secondary-bar>
-            <div slot="body">
-              <button class="button button-block">Block level button</button>
-            </div>
-          </header-secondary-bar>
- -->
-<!--           <footer-secondary-bar>
-            <div slot="body">
-              <button class="button button-block">Block level button</button>
-            </div>
-          </footer-secondary-bar>
- -->
-<!--           <footer-bar>
-            <div slot="bar-left">
-              <a class="icon icon-edit pull-left"></a>
-            </div>
-            <div slot="bar-right">
-              <a class="icon icon-settings pull-right"></a>
-            </div>
-          </footer-bar> -->
+        <bar 
+          :tab-items.sync="tabItems"></bar>
+          
+        <router-view keep-alive transition="slide"></router-view>
 
       </div>
 
@@ -94,11 +45,6 @@
   import SearchInput from './components/ui/Search/SearchInput.vue';
 
   import Popup from './components/ui/Popup/Popup.vue';
-
-  Vue.transition('slide', {
-    enterClass: 'slideInLeft',
-    leaveClass: 'slideOutRight'
-  });
 
   export default {
     methods: {
@@ -205,6 +151,55 @@
   .page {
     display: block!important;
   }
+
+  @keyframes slideIn {
+      from {
+          transform: translateX(100%, 0, 0);
+      }
+      to {
+          transform: translateX(0, 0, 0);
+      }
+  }
+  @keyframes slideOut {
+      from {
+          transform: translateX(0, 0, 0);
+      }
+      to {
+          transform: translateX(100%, 0, 0);
+      }
+  }
+
+  .slideIn {
+      /*animation: slideIn .2s forwards;*/
+  }
+
+  .slideOut {
+      /*animation: slideOut .2s forwards;*/
+  }
+
+  .slide-transition {
+    transition: left 0.2s ease-in-out;
+    width: 100%;
+  }
+
+  .slide-enter, .slide-leave {
+    /*animation: slideIn .3s forwards;*/
+    transform: translateX(100%);
+    /*left: 100%;*/
+  }
+
+  .slide-leave {
+    /*animation: slideOut .3s forwards;*/
+    transform: translateX(-100%);
+  }
+
+  .app-transition {
+    transition: opacity 0.3s ease;
+  }
+  .app-enter, .app-leave {
+    opacity: 0;
+  }
+
 
   .outLeftInRight-transition,
   .fadeOutLeft-transition, 

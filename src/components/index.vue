@@ -1,94 +1,110 @@
 <template>
 
   <!-- 这里是页面内容区 -->
-  <div class="content">
-      <!-- <btn-group :groups.sync="groups"></btn-group> -->
-      <v-form>
-        <div slot="form">
-          <text-input :model.sync="name" :keyup="changed" label="姓名"></text-input>
-          <switch :on="true" :changed="changed"></switch>
-          <text-area :model="fuck" :changed="changed"></text-area>
-          <calendar id="birthday" :changed="calendarOnChange" label="生日"></calendar>
-          <picker label="手机" id="phone" model="fuck fuck" :cols.sync="pickerCols"></picker>
-          <datetime-picker label="时间" id="timepicker"></datetime-picker>
-        </div>
-        <div slot="footer">
-          <div class="content-block">
-            <div class="row">
-              <div class="col-50">
-                <btn label="取消" :big="true" :danger="true" :fill="true" :rounded="false"></btn>        
-              </div>
-              <div class="col-50">
-                <btn label="确认" :big="true" :success="true" :fill="true" :rounded="false"></btn>
+
+  <div>
+    <tab-bar
+      :tabs.sync="tabs">
+      <div slot="bar-left">
+        <button class="button pull-left">
+          Left
+        </button>
+      </div>
+    </tab-bar>
+
+    <search-input :model="name" :enter="keyup"></search-input>
+    
+    <div class="content">
+        <!-- <btn-group :groups.sync="groups"></btn-group> -->
+        <v-form>
+          <div slot="form">
+            <text-input :model.sync="name" :keyup="changed" label="姓名"></text-input>
+            <switch :on="true" :changed="changed"></switch>
+            <text-area :model="fuck" :changed="changed"></text-area>
+            <calendar id="birthday" :changed="calendarOnChange" label="生日"></calendar>
+            <picker label="手机" id="phone" model="fuck fuck" :cols.sync="pickerCols"></picker>
+            <datetime-picker label="时间" id="timepicker"></datetime-picker>
+          </div>
+          <div slot="footer">
+            <div class="content-block">
+              <div class="row">
+                <div class="col-50">
+                  <btn label="取消" :big="true" :danger="true" :fill="true" :rounded="false"></btn>        
+                </div>
+                <div class="col-50">
+                  <btn label="确认" :big="true" :success="true" :fill="true" :rounded="false"></btn>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </v-form>
+        </v-form>
 
-      <icon icon="app"></icon>
-      <icon icon="card"></icon>
-      <icon icon="cart"></icon>
-      <icon icon="star"></icon>
+        <icon icon="app"></icon>
+        <icon icon="card"></icon>
+        <icon icon="cart"></icon>
+        <icon icon="star"></icon>
 
-      <light-search-input></light-search-input>
+        <light-search-input></light-search-input>
 
-      <light-search-input 
-        :row="true" 
-        :button-visible="true"
-        input-col="80"
-        btn-col="20"
-        :model="name"
-        :search-btn-clicked="changed">
-      </light-search-input>
+        <light-search-input 
+          :row="true" 
+          :button-visible="true"
+          input-col="80"
+          btn-col="20"
+          :model="name"
+          :search-btn-clicked="changed">
+        </light-search-input>
 
-      <light-search-input 
-        :row="true" 
-        :button-visible="true"
-        input-col="85"
-        btn-col="15"
-        :model="name"
-        :search-btn-clicked="changed"
-        :use-btn-icon="true">
-      </light-search-input>
+        <light-search-input 
+          :row="true" 
+          :button-visible="true"
+          input-col="85"
+          btn-col="15"
+          :model="name"
+          :search-btn-clicked="changed"
+          :use-btn-icon="true">
+        </light-search-input>
 
-      <p>
-        <btn></btn>
-      </p>
+        <p>
+          <btn></btn>
+        </p>
 
-      <p>
-        <btn label="light button" :light="true"></btn>
-      </p>
+        <p>
+          <btn label="light button" :light="true"></btn>
+        </p>
 
-      <p>
-        <btn label="disabled" :disabled="true"></btn>
-      </p>
+        <p>
+          <btn label="disabled" :disabled="true"></btn>
+        </p>
 
-      <p>
-        <btn label="success" :success="true" :rounded="true"></btn>
-      </p>
+        <p>
+          <btn label="success" :success="true" :rounded="true"></btn>
+        </p>
 
-      <p>
-        <btn label="warning" :warning="true"></btn>
-      </p>
+        <p>
+          <btn label="warning" :warning="true"></btn>
+        </p>
 
-      <p>
-        <btn label="danger" :danger="true"></btn>
-      </p>
+        <p>
+          <btn label="danger" :danger="true"></btn>
+        </p>
 
-      <p>
-        <btn label="rounded" :fill="true" :rounded="true"></btn>
-      </p>
+        <p>
+          <btn label="rounded" :fill="true" :rounded="true"></btn>
+        </p>
 
-      <p>
-        <btn :big="true"></btn>
-      </p>
-
+        <p>
+          <btn :big="true"></btn>
+        </p>
+    </div>
   </div>
 
 </template>
 
 <script>
+
+import TabBar from './ui/TitleBar/TabBar.vue';
+import Bar from './ui/Bar/Bar.vue';
 
 import Btn from './ui/Button/Button.vue';
 import BtnGroup from './ui/Button/ButtonGroup.vue';
@@ -141,6 +157,22 @@ export default {
         id: 'tab2'
       }],
 
+      tabItems: [{
+        active: true,
+        label: '文案',
+        badge: false
+      }, {
+        active: false,
+        label: '文案',
+        badge: 10,
+        icon: 'icon-me'
+      }, {
+        active: false,
+        label: '文案',
+        badge: false,
+        icon: 'icon-star'
+      }],
+
       tabsHeader: [{
         active: true,
         label: 'shit',
@@ -185,7 +217,9 @@ export default {
     Calendar,
     Picker,
     DatetimePicker,
-    Icon
+    Icon,
+    TabBar,
+    Bar
   },
 
   methods: {
