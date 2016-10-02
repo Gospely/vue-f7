@@ -1,6 +1,6 @@
-# ide
+# vuef7
 
-> the IDE of proeject Gospel
+> vuejs + framework7
 
 ## Build Setup
 
