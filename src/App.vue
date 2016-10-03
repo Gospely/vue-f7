@@ -165,24 +165,22 @@
   }
 
   .slide-transition {
-    transition: left 0.2s ease-in-out;
+    transition: left 0.2s ease;
     width: 100%;
   }
 
   .slide-enter, .slide-leave {
-    /*animation: slideIn .3s forwards;*/
-    transform: translateX(100%);
+    animation: slideIn .3s forwards;
     left: 100%;
   }
 
   .slide-leave {
-    /*animation: slideOut .3s forwards;*/
-    transform: translateX(-100%);
+    animation: slideOut .3s forwards;
     left: 100%;
   }
 
   .app-transition {
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease;
   }
   .app-enter, .app-leave {
     opacity: 0;

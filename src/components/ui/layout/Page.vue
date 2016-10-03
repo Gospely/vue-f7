@@ -1,5 +1,5 @@
 <template>
-
+		
 	<div class="content" id="{{id}}" v-bind:class="{'pull-to-refresh-content': pullRefresh, 'infinite-scroll': scrollRefresh, 'infinite-scroll-top': scrollPosition == 'top', 'infinite-scroll-bottom': scrollPosition == 'bottom'}" data-ptr-distance="{{ptrDistance}}" data-distance="{{scrollDistance}}">
 		<pull-refresh v-show="pullRefresh"></pull-refresh>
 		<slot></slot>

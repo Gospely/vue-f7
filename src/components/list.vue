@@ -1,6 +1,6 @@
 <template>
 
-	<div>
+	<div class="content">
 		<page :pull-refresh="true" :scroll-refresh="true" id="pr">
 			<list title="标题测试" :items="items"></list>
 			<list :contact-list="true" :list-group.sync="listGroup"></list>
