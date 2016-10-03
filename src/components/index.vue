@@ -2,7 +2,7 @@
 
   <!-- 这里是页面内容区 -->
 
-  <div>
+  <div transition="app">
     <tab-bar
       :tabs.sync="tabs">
       <div slot="bar-left">
@@ -13,7 +13,7 @@
     </tab-bar>
 
     <search-input :model="name" :enter="keyup"></search-input>
-    
+
     <div class="content">
         <!-- <btn-group :groups.sync="groups"></btn-group> -->
         <v-form>

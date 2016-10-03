@@ -2,17 +2,13 @@
 
   <div class="page-group">
       <div class="page">
-
         <bar 
           :tab-items.sync="tabItems"></bar>
-          
-        <router-view keep-alive transition="slide"></router-view>
-
+        <router-view transition="slide"></router-view>
       </div>
 
       <panel :left="false" id="test-panel">
       </panel>
-
       <popup cls="about">
         <button-bar 
           title="shit"
@@ -21,7 +17,6 @@
           :right-visible="false">
         </button-bar>
       </popup>
-
   </div>
 
 </template>
@@ -169,14 +164,6 @@
       }
   }
 
-  .slideIn {
-      /*animation: slideIn .2s forwards;*/
-  }
-
-  .slideOut {
-      /*animation: slideOut .2s forwards;*/
-  }
-
   .slide-transition {
     transition: left 0.2s ease-in-out;
     width: 100%;
@@ -185,12 +172,13 @@
   .slide-enter, .slide-leave {
     /*animation: slideIn .3s forwards;*/
     transform: translateX(100%);
-    /*left: 100%;*/
+    left: 100%;
   }
 
   .slide-leave {
     /*animation: slideOut .3s forwards;*/
     transform: translateX(-100%);
+    left: 100%;
   }
 
   .app-transition {
