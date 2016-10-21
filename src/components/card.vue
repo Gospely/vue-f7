@@ -56,26 +56,9 @@
 
 <script>
 
-	import Cards from './ui/Card/Cards.vue';
-	import Card from './ui/Card/Card.vue';
-	import CardContent from './ui/Card/CardContent.vue';
-	import CardHeader from './ui/Card/CardHeader.vue';
-	import CardFooter from './ui/Card/CardFooter.vue';
-	import ListTitle from './ui/List/ListTitle.vue';
-	import Link from './ui/Button/Link.vue';
-	import ScrollPreloader from './ui/Loader/ScrollPreloader.vue';
-
 	export default {
 
 		components: {
-			Cards,
-			Card,
-			CardContent,
-			CardHeader,
-			CardFooter,
-			ListTitle,
-			Link,
-			ScrollPreloader
 		},
 
 		ready () {

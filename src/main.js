@@ -12,6 +12,8 @@ import routerConfig from './routers.js';
 import Vuex from 'vuex';
 // import stores from './vuex/stores.js';
 
+import './components.js';
+
 $.closePopup = function () {
     var closeMe = $('body').append('<a id="close-fucking-popup" class="close-popup">Close me</a>');
     $('#close-fucking-popup').click();

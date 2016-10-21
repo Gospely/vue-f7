@@ -68,20 +68,6 @@
 
 <script>
 
-	import Vue from 'vue';
-
-	import Tab from './ui/Tabs/Tab.vue';
-	import TabItem from './ui/Tabs/TabItem.vue';
-
-  	import Panel from './ui/Panel/Panel.vue';
-
-  	import Grid from './ui/Grid/Grid.vue';
-  	import GridRow from './ui/Grid/GridRow.vue';
-
-  	import btn from './ui/Button/Button.vue';
-
-  	import Calendar from './ui/Calendar/Calendar.vue';
-
 	export default {
 	  data () {
 
@@ -334,12 +320,6 @@
 	  },
 
 	  components: {
-	    Tab,
-	    TabItem,
-	    Grid,
-	    GridRow,
-	    btn,
-	    Calendar
 	  }
 	}
 

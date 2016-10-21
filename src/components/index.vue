@@ -103,31 +103,6 @@
 
 <script>
 
-import TabBar from './ui/TitleBar/TabBar.vue';
-import Bar from './ui/Bar/Bar.vue';
-
-import Btn from './ui/Button/Button.vue';
-import BtnGroup from './ui/Button/ButtonGroup.vue';
-
-import Inputer from './ui/Form/Input.vue';
-import TextInput from './ui/Form/TextInput.vue';
-import Switch from './ui/Form/Switch.vue';
-import TextArea from './ui/Form/TextArea.vue';
-
-import Calendar from './ui/Calendar/Calendar.vue';
-import Picker from './ui/Calendar/Picker.vue';
-import DatetimePicker from './ui/calendar/DatetimePicker';
-
-import VForm from './ui/Form/VForm.vue';
-
-import SearchInput from './ui/Search/SearchInput.vue';
-import LightSearchInput from './ui/Search/LightSearchInput.vue';
-
-import Tab from './ui/Tabs/Tab.vue';
-import TabItem from './ui/Tabs/TabItem.vue';
-
-import Icon from './ui/Icon/Icon.vue';
-
 export default {
   data () {
 
@@ -203,23 +178,7 @@ export default {
   },
 
   components: {
-    Btn,
-    BtnGroup,
-    Inputer,
-    TextInput,
-    Switch,
-    TextArea,
-    VForm,
-    SearchInput,
-    LightSearchInput,
-    Tab,
-    TabItem,
-    Calendar,
-    Picker,
-    DatetimePicker,
-    Icon,
-    TabBar,
-    Bar
+
   },
 
   methods: {

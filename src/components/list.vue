@@ -19,25 +19,9 @@
 
 <script>
 
-	import List from './ui/List/List.vue';
-	import MediaList from './ui/List/MediaList.vue';
-	import ListItem from './ui/List/ListItem.vue';
-	import RadioList from './ui/List/RadioList.vue';
-	import CheckList from './ui/List/CheckList.vue';
-	import PullRefresh from './ui/Loader/PullRefresh.vue'
-
-	import Page from './ui/layout/Page.vue';
-
 	export default {
 
 		components: {
-			List,
-			MediaList,
-			RadioList,
-			CheckList,
-			ListItem,
-			PullRefresh,
-			Page
 		},
 
 		ready () {

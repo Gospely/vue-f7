@@ -42,6 +42,10 @@
 
 		},
 
+		ready () {
+
+		},
+
 		methods: {
 
 			open: function(id) {
