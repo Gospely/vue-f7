@@ -23,24 +23,6 @@
 
 <script>
 
-  import Vue from 'Vue';
-  import TitleBar from './components/ui/TitleBar/CommonBar.vue';
-  import ButtonBar from './components/ui/TitleBar/ButtonBar.vue';
-  import IconBar from './components/ui/TitleBar/IconBar.vue';
-  import IconLinkBar from './components/ui/TitleBar/IconLinkBar.vue';
-  import TabBar from './components/ui/TitleBar/TabBar.vue';
-
-  import Bar from './components/ui/Bar/Bar.vue';
-  import FooterBar from './components/ui/Bar/FooterBar.vue';
-  import HeaderSecondaryBar from './components/ui/Bar/HeaderSecondaryBar.vue';
-  import FooterSecondaryBar from './components/ui/Bar/FooterSecondaryBar.vue';
-
-  import Panel from './components/ui/Panel/Panel.vue';
-
-  import SearchInput from './components/ui/Search/SearchInput.vue';
-
-  import Popup from './components/ui/Popup/Popup.vue';
-
   export default {
     methods: {
 
@@ -56,18 +38,6 @@
     },
 
     components: {
-      TitleBar,
-      ButtonBar,
-      IconBar,
-      IconLinkBar,
-      TabBar,
-      Bar,
-      FooterBar,
-      HeaderSecondaryBar,
-      FooterSecondaryBar,
-      Panel,
-      SearchInput,
-      Popup
     },
 
     data() {
